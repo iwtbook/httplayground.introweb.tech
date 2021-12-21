@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTTPlayground</title>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+    rel="stylesheet">
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" href="/assets/styles.css" />
+
+  <!-- script -->
+  <script src="/assets/script.js" type="module"></script>
+</head>
+
+<body>
+  <header>
+    <img src="/assets/playground.min.jpg" alt="Playground" id="hero" />
+    <h1>HTTPlayground</h1>
+    <p>All methods are based off of the url
+      <code>https://httplayground.introweb.tech/</code>
+    </p>
+  </header>
+  <main>
+    <ul>
+      <li>
+        <div tabindex="1" class="category">
+          <h2>HTTP Methods</h2>
+          <p class="description">Testing different HTTP verbs</p>
+        </div>
+        <ul class="routes">
+          <li class="delete">
+            <span class="method">DELETE</span>
+            <span class="route">/delete</span>
+            <span class="action">The request's DELETE parameters.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/get</span>
+            <span class="action">The request's GET parameters.</span>
+          </li>
+          <li class="patch">
+            <span class="method">PATCH</span>
+            <span class="route">/patch</span>
+            <span class="action">The request's PATCH parameters.</span>
+          </li>
+          <li class="post">
+            <span class="method">POST</span>
+            <span class="route">/post</span>
+            <span class="action">The request's POST parameters.</span>
+          </li>
+          <li class="put">
+            <span class="method">PUT</span>
+            <span class="route">/put</span>
+            <span class="action">The request's PUT parameters.</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div tabindex="2" class="category">
+          <h2>Auth</h2>
+          <p class="description">Auth Methods</p>
+        </div>
+        <ul class="routes">
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/basic-auth/{user}/{passwd}</span>
+            <span class="action">Prompts the user for authorization using HTTP
+              Basic Auth.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/bearer</span>
+            <span class="action">Prompts the user for authorization using bearer
+              authentication.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/digest-auth/{qop}/{user}/{passwd}</span>
+            <span class="action">Prompts the user for authorization using Digest
+              Auth</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span
+              class="route">/digest-auth/{qop}/{user}/{passwd}/{algorithm}</span>
+            <span class="action">Prompts the user for authorization using Digest
+              Auth + Algorithm.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span
+              class="route">/digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after}</span>
+            <span class="action">Prompts the user for authorization using Digest
+              Auth + Algorithm.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/digest-auth/{qop}/{user}/{passwd}</span>
+            <span class="action">Prompts the user for authorization using HTTP
+              Basic Auth</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div tabindex="3" class="category">
+          <h2>Status codes</h2>
+          <p class="description">Generates responses with given status
+            code</p>
+        </div>
+        <ul class="routes">
+          <li class="delete">
+            <span class="method">DELETE</span>
+            <span class="route">/status/{codes}</span>
+            <span class="action">Return status code or random status code if
+              more than one are given.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/status/{codes}</span>
+            <span class="action">Return status code or random status code if
+              more than one are given.</span>
+          </li>
+          <li class="patch">
+            <span class="method">PATCH</span>
+            <span class="route">/status/{codes}</span>
+            <span class="action">Return status code or random status code if
+              more than one are given.</span>
+          </li>
+          <li class="post">
+            <span class="method">POST</span>
+            <span class="route">/status/{codes}</span>
+            <span class="action">Return status code or random status code if
+              more than one are given.</span>
+          </li>
+          <li class="put">
+            <span class="method">PUT</span>
+            <span class="route">/status/{codes}</span>
+            <span class="action">Return status code or random status code if
+              more than one are given.</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div tabindex="4" class="category">
+          <h2>Request inspection</h2>
+          <p class="description">Inspect the request data</p>
+        </div>
+        <ul class="routes">
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/headers</span>
+            <span class="action">Return the incoming request's HTTP
+              headers.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/ip</span>
+            <span class="action">Return the incoming request's IP
+              Address.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/user-agent</span>
+            <span class="action">Return the incoming request's User-Agent
+              header.
+            </span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div tabindex="5" class="category">
+          <h2>Response inspection</h2>
+          <p class="description">Inspect the response data like caching and
+            headers</p>
+        </div>
+        <ul class="routes">
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/cache</span>
+            <span class="action">Returns a 304 if an If-Modified-Since header or
+              If-None-Match is present.
+              Returns the same as a GET otherwise.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/cache/{value}</span>
+            <span class="action">Sets a Cache-Control header for n
+              seconds.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/etag/{etag}</span>
+            <span class="action">Assumes the resource has the given etag and
+              responds to If-None-Match and
+              If-Match headers appropriately.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/response-headers</span>
+            <span class="action">Returns a set of response headers from the
+              query string.</span>
+          </li>
+          <li class="post">
+            <span class="method">POST</span>
+            <span class="route">/response-headers</span>
+            <span class="action">Returns a set of response headers from the
+              query string.</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div tabindex="6" class="category">
+          <h2>Response formats</h2>
+          <p class="description">Returns responses in different data
+            formats</p>
+        </div>
+        <ul class="routes">
+
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/brotli</span>
+            <span class="action">Returns Brotli-encoded data.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/deflate</span>
+            <span class="action">Returns Deflate-encoded data.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/deny</span>
+            <span class="action">Returns page denied by robots.txt rules.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/encoding/utf8</span>
+            <span class="action">Returns a UTF-8 encoded body.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/gzip</span>
+            <span class="action">Returns GZip-encoded data.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/html</span>
+            <span class="action">Returns a simple HTML document.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/json</span>
+            <span class="action">Returns a simple JSON document.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/robots.txt</span>
+            <span class="action">Returns some robots.txt rules.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/xml</span>
+            <span class="action">Returns a simple XML document.</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div tabindex="7" class="category">
+          <h2>Dynamic data</h2>
+          <p class="description">Generates random and dynamic data</p>
+        </div>
+        <ul class="routes">
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/base64/{value}</span>
+            <span class="action">Decodes base64url-encoded string.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/bytes{n}</span>
+            <span class="action">Returns n random bytes generated with given
+              seed.</span>
+          </li>
+          <li class="delete">
+            <span class="method">DELETE</span>
+            <span class="route">/delay/{delay}</span>
+            <span class="action">Returns a delayed response (max of 10
+              seconds).</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/delay/{delay}</span>
+            <span class="action">Returns a delayed response (max of 10
+              seconds).</span>
+          </li>
+          <li class="patch">
+            <span class="method">PATCH</span>
+            <span class="route">/delay/{delay}</span>
+            <span class="action">Returns a delayed response (max of 10
+              seconds).</span>
+          </li>
+          <li class="post">
+            <span class="method">POST</span>
+            <span class="route">/delay/{delay}</span>
+            <span class="action">Returns a delayed response (max of 10
+              seconds).</span>
+          </li>
+          <li class="put">
+            <span class="method">PUT</span>
+            <span class="route">/delay/{delay}</span>
+            <span class="action">Returns a delayed response (max of 10
+              seconds).</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/drip</span>
+            <span class="action">Drips data over a duration after an optional
+              initial delay</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/links/{n}/{offset}</span>
+            <span class="action">Generate a page containing n links to other
+              pages which do the same.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/range/{numbytes}</span>
+            <span class="action">Streams n random bytes generated with given
+              seed, at given chunk size per packet.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/stream-bytes/{n}</span>
+            <span class="action">Streams n random bytes generated with given
+              seed, at given chunk size per
+              packet.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/stream/{n}</span>
+            <span class="action">Stream n JSON responses.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">uuid</span>
+            <span class="action">Returns a UUID4.</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div tabindex="8" class="category">
+          <h2>Cookies</h2>
+          <p class="description">Creates, reads, and deletes Cookies</p>
+        </div>
+        <ul class="routes">
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/cookies</span>
+            <span class="action">Returns cookie data.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/cookies/delete</span>
+            <span class="action">Deletes cookie(s) as provided by the query
+              string and redirects to cookie list.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/cookies/set</span>
+            <span class="action">Set cookie(s) as provided by the query string
+              and redirects to cookie list.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/cookies/set/{name}/{value}</span>
+            <span class="action">Sets a cookie and redirects to cookie
+              list.</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div tabindex="9" class="category">
+          <h2>Images</h2>
+          <p class="description">Returns different image formats</p>
+        </div>
+        <ul class="routes">
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/image</span>
+            <span class="action">Returns a simple image of the type suggest by
+              the Accept header.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/image/jpg</span>
+            <span class="action">Returns a simple JPEG image.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/image/png</span>
+            <span class="action">Returns a simple PNG image.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/image/svg</span>
+            <span class="action">Returns a simple SVG image.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/image/webp</span>
+            <span class="action">Returns a simple WebP image.</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div tabindex="10" class="category">
+          <h2>Redirects</h2>
+          <p class="description">Returns different redirect response</p>
+        </div>
+        <ul class="routes">
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/absolute-redirect/{n}</span>
+            <span class="action">Absolutely 302 Redirects n times.</span>
+          </li>
+          <li class="delete">
+            <span class="method">DELETE</span>
+            <span class="route">/redirect-to</span>
+            <span class="action">302/3XX Redirects to the given URL.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/redirect-to</span>
+            <span class="action">302/3XX Redirects to the given URL.</span>
+          </li>
+          <li class="patch">
+            <span class="method">PATCH</span>
+            <span class="route">/redirect-to</span>
+            <span class="action">302/3XX Redirects to the given URL.</span>
+          </li>
+          <li class="post">
+            <span class="method">POST</span>
+            <span class="route">/redirect-to</span>
+            <span class="action">302/3XX Redirects to the given URL.</span>
+          </li>
+          <li class="put">
+            <span class="method">PUT</span>
+            <span class="route">/redirect-to</span>
+            <span class="action">302/3XX Redirects to the given URL.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/redirect/{n}</span>
+            <span class="action">302 Redirects n times.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/relative-direct/{n}</span>
+            <span class="action">Relatively 302 Redirects n times.</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div tabindex="11" class="category">
+          <h2>Anything</h2>
+          <p class="description">Returns anything that is passed to
+            request</p>
+        </div>
+        <ul class="routes">
+          <li class="delete">
+            <span class="method">DELETE</span>
+            <span class="route">/anything</span>
+            <span class="action">Returns anything passed in request data.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/anything</span>
+            <span class="action">Returns anything passed in request data.</span>
+          </li>
+          <li class="patch">
+            <span class="method">PATCH</span>
+            <span class="route">/anything</span>
+            <span class="action">Returns anything passed in request data.</span>
+          </li>
+          <li class="post">
+            <span class="method">POST</span>
+            <span class="route">/anything</span>
+            <span class="action">Returns anything passed in request data.</span>
+          </li>
+          <li class="put">
+            <span class="method">PUT</span>
+            <span class="route">/anything</span>
+            <span class="action">Returns anything passed in request data.</span>
+          </li>
+          <li class="delete">
+            <span class="method">DELETE</span>
+            <span class="route">/anything/{anything}</span>
+            <span class="action">Returns anything passed in request data.</span>
+          </li>
+          <li class="get">
+            <span class="method">GET</span>
+            <span class="route">/anything/{anything}</span>
+            <span class="action">Returns anything passed in request data.</span>
+          </li>
+          <li class="patch">
+            <span class="method">PATCH</span>
+            <span class="route">/anything/{anything}</span>
+            <span class="action">Returns anything passed in request data.</span>
+          </li>
+          <li class="post">
+            <span class="method">POST</span>
+            <span class="route">/anything/{anything}</span>
+            <span class="action">Returns anything passed in request data.</span>
+          </li>
+          <li class="put">
+            <span class="method">PUT</span>
+            <span class="route">/anything/{anything}</span>
+            <span class="action">Returns anything passed in request data.</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </main>
+</body>
+
+</html>

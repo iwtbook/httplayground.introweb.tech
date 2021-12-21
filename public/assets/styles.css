@@ -1,0 +1,201 @@
+/* styles.css */
+
+* {
+  color: #3B4151;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fafafa;
+  height: 100%;
+  width: 90%;
+}
+
+code {
+  background-color: rgb(69, 69, 69);
+  border-radius: 3px;
+  color: rgb(255, 208, 122);
+  font-family: monospace;
+  font-size: 0.9rem;
+  padding: 3px 6px;;
+}
+
+header {
+  margin: 45px 0 0 0;
+}
+
+header h1 {
+  font-size: 2.25rem;
+  margin: 0;
+}
+
+html {
+  align-items: center;
+  display: grid;
+  height: 100%;
+  justify-items: center;
+  width: 100%;
+}
+
+main {
+  margin: 45px 0;
+}
+
+main>ul {
+  margin: 0;
+  padding: 0;
+}
+
+main>ul>li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+main>ul>li>.category {
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  box-sizing: border-box;
+  column-gap: 10px;
+  display: flex;
+  margin-bottom: 5px;
+  padding: 10px 20px 10px 10px;
+  transition: 0.2s ease all;
+  user-select: none;
+  width: 100%;
+}
+
+main>ul>li>.category:hover {
+  cursor: pointer;
+  background-color: #f5f2f2;
+  transition: 0.2s ease all;
+}
+
+main>ul>li>.category::after {
+  background-image: url('/assets/right-arrow.svg');
+  content: '';
+  height: 20px;
+  left: calc(95% - 35px);
+  opacity: 0.6;
+  position: absolute;
+  transition: 0.05s ease all;
+  width: 20px
+}
+
+main>ul>li>.category.open::after {
+  transform: rotate(90deg);
+  transition: 0.05s ease all;
+}
+
+main>ul>li ul.routes {
+  display: none;
+  width: 100%;
+}
+
+main>ul>li>.category.open ~ ul.routes {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+main>ul>li h2,
+main>ul>li p.description {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+main>ul>li p {
+  font-size: 0.875rem;
+}
+
+ul.routes li {
+  align-items: center;
+  display: flex;
+  column-gap: 10px;
+  margin-top: 15px;
+}
+
+ul.routes li:last-child {
+  margin-bottom: 20px;
+}
+
+ul.routes li span {
+  display: inline-block;
+}
+
+ul.routes .action {
+  font-size: 0.875rem;
+}
+
+ul.routes .method {
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  min-width: 80px;
+  padding: 6px 15px;
+  text-align: center;
+}
+
+ul.routes .route {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+ul.routes .delete {
+  --color: #f93e3e;
+  background-color: rgba(249,62,62,.1);
+}
+
+ul.routes .get {
+  --color: #61AFFE;
+  background-color: rgba(97,175,254,.1);
+}
+
+ul.routes .patch {
+  --color: #50E3C2;
+  background-color: rgba(80,227,194,.1);
+}
+
+ul.routes .post {
+  --color: #49CC90;
+  background-color: rgba(73,204,144,.1);
+}
+
+ul.routes .put {
+  --color: #FCA130;
+  background-color: rgba(252,161,48,.1);
+}
+
+ul.routes li {
+  border: 1px solid var(--color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+ul.routes .delete .method,
+ul.routes .get .method,
+ul.routes .patch .method,
+ul.routes .post .method,
+ul.routes .put .method {
+  background-color: var(--color);
+}
+
+#hero {
+  border-radius: 3px;
+  height: 200px;
+  margin-bottom: 30px;
+  object-fit: cover;
+  width: 100%;
+}

@@ -25,6 +25,14 @@ code {
   padding: 3px 6px;;
 }
 
+footer {
+  margin: 60px 0;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
 header {
   margin: 45px 0 0 0;
 }
@@ -43,7 +51,7 @@ html {
 }
 
 main {
-  margin: 45px 0;
+  margin-top: 45px;
 }
 
 main>ul {

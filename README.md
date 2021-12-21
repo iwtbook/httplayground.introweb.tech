@@ -1,20 +1,7 @@
-# httpbin: HTTP Request & Response Service in Node.js
+# HTTPlayground
 
-[![Build Status](https://travis-ci.org/isayme/node-httpbin.svg?branch=master)](https://travis-ci.org/isayme/node-httpbin)
-[![Coverage Status](https://coveralls.io/repos/github/isayme/node-httpbin/badge.svg?branch=master)](https://coveralls.io/github/isayme/node-httpbin?branch=master)
+An HTTP Request & Response Service made using Node.js
 
-## Nginx config
-```
-server {
-    listen 443;
-    server_name httpbin.isayme.org;
+Cloned from [here](https://github.com/isayme/node-httpbin)
 
-    location / {
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_pass http://httpbin:8080;
-    }
-}
-```
+Live Site: [httplayground.introweb.tech](https://httplayground.introweb.tech)

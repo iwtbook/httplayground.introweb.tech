@@ -24,6 +24,17 @@ app.use(cookieParser())
 app.use(require('./middleware/cors'))
 app.use(require('./middleware/multer'))
 
+// Custom middleware to add a header to every response
+app.use((req, res, next) => {
+  const headers = [
+    'X-Requested-By',
+    'X-Request-Id'
+  ];
+  res.set('Access-Control-Allow-Origin', '*'); 
+  res.set('Access-Control-Allow-Headers', headers.join(', '));
+  next();
+});
+
 app.use('/version', require('./router/version'))
 app.use(require('./router/httpbin'))
 

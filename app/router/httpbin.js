@@ -34,6 +34,12 @@ router.get('/favicon.png', (req, res) => {
   })
 })
 
+router.get('/assets/:asset', (req, res) => {
+  res.sendFile(req.params.asset, {
+    root: './public/assets'
+  })
+})
+
 router.get('/ip', function (req, res) {
   res.json({
     origin: req.ctx.ip

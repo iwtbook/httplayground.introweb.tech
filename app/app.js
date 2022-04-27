@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser')
 const config = require('config')
 const logger = require('app/logger')
 const partialResponse = require('express-partial-response')
+const { rest } = require('lodash')
 
 const app = express()
 
@@ -26,12 +27,9 @@ app.use(require('./middleware/multer'))
 
 // Custom middleware to add a header to every response
 app.use((req, res, next) => {
-  const headers = [
-    'X-Requested-By',
-    'X-Request-Id'
-  ];
   res.set('Access-Control-Allow-Origin', '*'); 
-  res.set('Access-Control-Allow-Headers', headers.join(', '));
+  res.set('Access-Control-Allow-Methods', '*');
+  res.set('Access-Control-Allow-Headers', '*');
   next();
 });
 
